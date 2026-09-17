@@ -6,13 +6,13 @@ Code: `import pandas as pd`
 
 First, import the Pandas library into the Python environment using the standard alias to enable DataFrame operations and structured data manipulation.
 
-A. VISAYAS COMMUNICATION DATAFRAME
+## **A. VISAYAS COMMUNICATION DATAFRAME**
 
 Load the raw student dataset (`board2.xlsx`) into Pandas and prepare the primary DataFrame by computing each student's overall exam average across all subjects (`Math`, `Electronics`, `GEAS`, `Communication`).
 
 Using explicit multi-condition Boolean filtering via `.loc[]`, extract students whose `Hometown` is Visayas and whose `Track` is Communication. Retain only the required feature subset (`Name`, `Gender`, `Math`, `Electronics`, `Average`) in the output DataFrame and output the total count using `.shape[0]`.
 
-B. VISAYAS FEMALE DATAFRAME
+## **B. VISAYAS FEMALE DATAFRAME**
 
 Isolate female students from Visayas using multi-condition Boolean filtering on the primary DataFrame, selecting only key academic attributes (`Name`, `Track`, `GEAS`, `Electronics`, `Average`). Afterwards, execute a non-destructive conditional filter to extract students with an `Average` score of 60 or higher without modifying the parent `VisFemale` DataFrame.
 
@@ -24,7 +24,7 @@ Code Explanation:
 
 `VisFemale['Average'] >= 60`: Creates a secondary Boolean mask applied directly to VisFemale to filter for passing scores while leaving the source dataset intact.
 
-c. CATEGORY-AVERAGE VISUALIZATION
+## **C. CATEGORY-AVERAGE VISUALIZATION**
 
 Calculate the mean `Average` score across categorical features (`Track`, `Gender`, `Hometown`), construct individual summary DataFrames for each, and generate a 3-panel bar chart figure. Finally, dynamically extract the highest-performing category for each feature using .idxmax() and print the analytical conclusions.
 
