@@ -14,12 +14,12 @@ Using explicit multi-condition Boolean filtering via `.loc[]`, extract students 
 
 B. VISAYAS FEMALE DATAFRAME
 
-Isolate female students from Visayas using multi-condition Boolean filtering on the primary DataFrame, selecting only key academic attributes (Name, Track, GEAS, Electronics, Average). Afterwards, execute a non-destructive conditional filter to extract students with an Average score of 60 or higher without modifying the parent VisFemale DataFrame.
+Isolate female students from Visayas using multi-condition Boolean filtering on the primary DataFrame, selecting only key academic attributes (`Name`, `Track`, `GEAS`, `Electronics`, `Average`). Afterwards, execute a non-destructive conditional filter to extract students with an `Average` score of 60 or higher without modifying the parent `VisFemale` DataFrame.
 
 Code Explanation:
 
-(df['Hometown'] == 'Visayas') & (df['Gender'] == 'Female'): Evaluates two Boolean conditions simultaneously using the element-wise & operator to identify qualifying rows.
+`(df['Hometown'] == 'Visayas') & (df['Gender'] == 'Female')`: Evaluates two Boolean conditions simultaneously using the element-wise & operator to identify qualifying rows.
 
-.loc[..., ['Name', 'Track', ...]]: Slices both the matching rows and the specific list of columns in one step.
+`.loc[..., ['Name', 'Track', ...]]`: Slices both the matching rows and the specific list of columns in one step.
 
-VisFemale['Average'] >= 60: Creates a secondary Boolean mask applied directly to VisFemale to filter for passing scores while leaving the source dataset intact.
+`VisFemale['Average'] >= 60`: Creates a secondary Boolean mask applied directly to VisFemale to filter for passing scores while leaving the source dataset intact.
