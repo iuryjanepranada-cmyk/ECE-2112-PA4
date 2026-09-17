@@ -28,8 +28,12 @@ Code Explanation:
 
 Calculate the mean `Average` score across categorical features (`Track`, `Gender`, `Hometown`), construct individual summary DataFrames for each, and generate a 3-panel bar chart figure. Finally, dynamically extract the highest-performing category for each feature using .idxmax() and print the analytical conclusions.
 
-Code Explanation
+Code Explanation:
+
 `df.loc[df['Track'] == 'Communication', 'Average'].mean()`: Isolates specific row groups per category mask and computes scalar mean values directly for manual table aggregation.
+
 `pd.DataFrame({...})`: Packages calculated category metrics into explicit structured summary tables.  
+
 `plt.subplots(1, 3, figsize=(15, 5))`: Initializes a 1-row by 3-column sub-plot grid layout to hold all bar chart visualizations side-by-side.  
+
 `.idxmax()`: Returns the index location of the maximum score entry within each summary table, allowing `Track_table.loc[...]` to dynamically pull top-performing labels without hard-coding text outputs.  
